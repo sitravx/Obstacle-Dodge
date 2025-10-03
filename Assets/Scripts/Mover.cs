@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField] private float xValue = 0.01f;
-    [SerializeField] private float yValue = 0.00f;
-    [SerializeField] private float zValue = 0.00f;
+    [Header("Movement Values")]
+    [SerializeField] private float speed = 5f;
     void Start()
     {
         
@@ -13,6 +12,8 @@ public class Mover : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(xValue, yValue, zValue);
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+        transform.Translate(moveHorizontal * speed * Time.deltaTime, 0, moveVertical * speed * Time.deltaTime);
     }
 }
