@@ -3,7 +3,7 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     [Header("Movement Values")]
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float moveSpeed = 5f;
     void Start()
     {
         
@@ -12,8 +12,8 @@ public class Mover : MonoBehaviour
 
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        transform.Translate(moveHorizontal * speed * Time.deltaTime , 0, moveVertical * speed * Time.deltaTime);
+        float moveHorizontal = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+        float moveVertical = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        transform.Translate(moveHorizontal, 0, moveVertical);
     }
 }
