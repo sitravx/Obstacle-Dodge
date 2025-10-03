@@ -14,6 +14,6 @@ public class Mover : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        transform.Translate(moveHorizontal * speed * Time.deltaTime, 0, moveVertical * speed * Time.deltaTime);
+        transform.Translate(moveHorizontal * speed * Time.deltaTime , 0, moveVertical * speed * Time.deltaTime);
     }
 }
