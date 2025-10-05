@@ -12,16 +12,21 @@ public class Dropper : MonoBehaviour
         myMeshRenderer = GetComponent<MeshRenderer>();
         myRigidbody = GetComponent<Rigidbody>();
         myMeshRenderer.enabled = false;
+        myRigidbody.useGravity = false;
     }
     void Update()
     {
-        Debug.Log(Time.time);
-        
+
+
         if (Time.time > waitTime)
         {
             Debug.Log("Gravity on!");
             myMeshRenderer.enabled = true;
             myRigidbody.useGravity = true;
+        }
+        else
+        {
+            Debug.Log(Time.time);
         }
     }
 }
