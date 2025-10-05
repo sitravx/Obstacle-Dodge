@@ -10,6 +10,7 @@ public class Dropper : MonoBehaviour
     void Start()
     {
         myMeshRenderer = GetComponent<MeshRenderer>();
+        myRigidbody = GetComponent<Rigidbody>();
         myMeshRenderer.enabled = false;
     }
     void Update()
