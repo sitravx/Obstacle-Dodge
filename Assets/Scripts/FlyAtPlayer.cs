@@ -6,7 +6,15 @@ public class FlyAtPlayer : MonoBehaviour
 
     [SerializeField] private float speed = 2f;
     [SerializeField] Transform player;
-    
+
+    void Awake()
+    {
+        gameObject.SetActive(false);
+    }
+    void Start()
+    {
+
+    }
     void Update()
     {
         MoveToPlayer();
